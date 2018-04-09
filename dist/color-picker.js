@@ -4,6 +4,7 @@ var React = require('react');
 var objectAssign = require('object-assign');
 var InputSlider = require('react-input-slider');
 var InputNumber = require('react-input-number');
+var createClass = require('create-react-class');
 
 var rgb2hsv = require('color-functions/lib/rgb2hsv');
 var hsv2hex = require('color-functions/lib/hsv2hex');
@@ -14,7 +15,7 @@ var rgba = require('color-functions/lib/rgba');
 
 var KEY_ENTER = 13;
 
-module.exports = React.createClass({
+module.exports = createClass({
   displayName: 'ColorPicker',
 
   getInitialState: function getInitialState() {

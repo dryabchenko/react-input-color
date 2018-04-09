@@ -4,6 +4,7 @@ var cx = require('classnames');
 var React = require('react');
 var ReactDOM = require('react-dom');
 var PropTypes = require('prop-types');
+var createClass = require('create-react-class');
 var assign = require('object-assign');
 var cssColor = require('color-functions/lib/css-color');
 var rgbaColor = require('color-functions/lib/rgba');
@@ -15,7 +16,7 @@ var ColorPicker = require('./color-picker.js');
 
 var KEY_ENTER = 13;
 
-module.exports = React.createClass({
+module.exports = createClass({
   displayName: 'InputColor',
 
   propTypes: {
