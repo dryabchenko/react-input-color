@@ -3,6 +3,7 @@
 var cx = require('classnames');
 var React = require('react');
 var ReactDOM = require('react-dom');
+var PropTypes = require('prop-types');
 var assign = require('object-assign');
 var cssColor = require('color-functions/lib/css-color');
 var rgbaColor = require('color-functions/lib/rgba');
@@ -18,8 +19,8 @@ module.exports = React.createClass({
   displayName: 'InputColor',
 
   propTypes: {
-    value: React.PropTypes.string,
-    defaultValue: React.PropTypes.string
+    value: PropTypes.string,
+    defaultValue: PropTypes.string
   },
 
   getDefaultProps: function getDefaultProps() {
