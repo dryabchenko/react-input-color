@@ -112,9 +112,9 @@ module.exports = createClass({
       this._updated = false;
     }
   },
-  change: function change(cssColor) {
+  change: function change(color) {
     if (this.props.onChange) {
-      this.props.onChange(cssColor);
+      this.props.onChange(color);
     }
   },
   _onChange: function _onChange(color) {
@@ -124,7 +124,7 @@ module.exports = createClass({
     });
 
     this._updated = true;
-    this.change('#' + rgba2hex(color.r, color.g, color.b, color.a));
+    this.change(color);
   },
   _onClick: function _onClick(e) {
     e.stopPropagation();

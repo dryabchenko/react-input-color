@@ -3,7 +3,6 @@
 var React = require('react');
 var objectAssign = require('object-assign');
 var InputSlider = require('react-input-slider');
-var InputNumber = require('react-input-number');
 var createClass = require('create-react-class');
 
 var rgb2hsv = require('color-functions/lib/rgb2hsv');
@@ -20,8 +19,7 @@ module.exports = createClass({
 
   getInitialState: function getInitialState() {
     return {
-      hex: this.props.color.hex,
-      hsvMode: false
+      hex: this.props.color.hex
     };
   },
   render: function render() {
@@ -71,112 +69,6 @@ module.exports = createClass({
           onChange: this._onAlphaChange
         }),
         React.createElement('div', { className: 'color', style: { backgroundColor: rgbaBackground } })
-      ),
-      React.createElement(
-        'div',
-        { className: 'inputs' },
-        React.createElement(
-          'div',
-          { className: 'input hex' },
-          React.createElement('input', { type: 'text', className: 'value', value: this.state.hex,
-            onChange: this._onHexChange, onKeyUp: this._onHexKeyUp }),
-          React.createElement(
-            'span',
-            { className: 'label' },
-            'Hex'
-          )
-        ),
-        !this.state.hsvMode ? React.createElement(
-          'div',
-          null,
-          React.createElement(
-            'div',
-            { className: 'input r' },
-            React.createElement(InputNumber, {
-              className: 'value', value: r,
-              onChange: this.changeRGB.bind(null, 'r') }),
-            React.createElement(
-              'span',
-              { className: 'label' },
-              'R'
-            )
-          ),
-          React.createElement(
-            'div',
-            { className: 'input g' },
-            React.createElement(InputNumber, {
-              className: 'value', value: g,
-              onChange: this.changeRGB.bind(null, 'g') }),
-            React.createElement(
-              'span',
-              { className: 'label' },
-              'G'
-            )
-          ),
-          React.createElement(
-            'div',
-            { className: 'input b' },
-            React.createElement(InputNumber, {
-              className: 'value', value: b,
-              onChange: this.changeRGB.bind(null, 'b') }),
-            React.createElement(
-              'span',
-              { className: 'label' },
-              'B'
-            )
-          )
-        ) : React.createElement(
-          'div',
-          null,
-          React.createElement(
-            'div',
-            { className: 'input h' },
-            React.createElement(InputNumber, {
-              className: 'value', value: h,
-              onChange: this.changeHSV.bind(null, 'h') }),
-            React.createElement(
-              'span',
-              { className: 'label' },
-              'H'
-            )
-          ),
-          React.createElement(
-            'div',
-            { className: 'input s' },
-            React.createElement(InputNumber, {
-              className: 'value', value: s,
-              onChange: this.changeHSV.bind(null, 's') }),
-            React.createElement(
-              'span',
-              { className: 'label' },
-              'S'
-            )
-          ),
-          React.createElement(
-            'div',
-            { className: 'input v' },
-            React.createElement(InputNumber, {
-              className: 'value', value: v,
-              onChange: this.changeHSV.bind(null, 'v') }),
-            React.createElement(
-              'span',
-              { className: 'label' },
-              'V'
-            )
-          )
-        ),
-        React.createElement(
-          'div',
-          { className: 'input a' },
-          React.createElement(InputNumber, {
-            className: 'value', value: a,
-            onChange: this.changeAlpha }),
-          React.createElement(
-            'span',
-            { className: 'label' },
-            'A'
-          )
-        )
       )
     );
   },
