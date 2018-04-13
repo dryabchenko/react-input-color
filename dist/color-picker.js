@@ -3,6 +3,7 @@
 var React = require('react');
 var objectAssign = require('object-assign');
 var InputSlider = require('react-input-slider');
+var InputNumber = require('react-input-number');
 var createClass = require('create-react-class');
 
 var rgb2hsv = require('color-functions/lib/rgb2hsv');
@@ -19,7 +20,8 @@ module.exports = createClass({
 
   getInitialState: function getInitialState() {
     return {
-      hex: this.props.color.hex
+      hex: this.props.color.hex,
+      hsvMode: false
     };
   },
   render: function render() {
