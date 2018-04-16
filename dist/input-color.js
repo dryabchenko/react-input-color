@@ -20,6 +20,7 @@ module.exports = createClass({
   displayName: 'InputColor',
 
   propTypes: {
+    alpha: PropTypes.number,
     value: PropTypes.string,
     defaultValue: PropTypes.string
   },
@@ -45,7 +46,7 @@ module.exports = createClass({
     var r = rgba.r,
         g = rgba.g,
         b = rgba.b,
-        a = rgba.a;
+        a = this.props.alpha || rgba.a;
     var hsv = rgb2hsv(r, g, b);
 
     return assign(hsv, {
